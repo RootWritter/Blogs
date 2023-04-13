@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-primary mb-3" data-bs-theme="dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Blog Ku</a>
+      <a class="navbar-brand" href="#">Navbar</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,7 +16,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
@@ -43,8 +43,8 @@
           </li>
         </ul>
         <div>
-          <a href="/login" class="btn btn-info mr-1">Login</a>
-          <a class="btn btn-success">Register</a>
+          <a class="btn btn-success mr-1" href="/login">Login</a>
+          <a class="btn btn-warning">Register</a>
         </div>
       </div>
     </div>
@@ -52,6 +52,6 @@
 </template>
 <script>
 export default {
-  name: "Navbar",
+  name: "NavBar",
 };
 </script>

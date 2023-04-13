@@ -42,4 +42,8 @@ export class UsersService {
     await this.userEntity.save(newUser);
     return newUser;
   }
+
+  async findAll() {
+    return this.userEntity.find();
+  }
 }

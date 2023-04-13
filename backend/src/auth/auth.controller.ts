@@ -13,12 +13,36 @@ export class AuthController {
       body.email,
       body.password,
     );
-    res.json(login);
+    if (!login) {
+      res.json({
+        status: false,
+        message: login,
+        data: null,
+      });
+    } else {
+      res.json({
+        status: true,
+        message: 'Success',
+        data: login,
+      });
+    }
   }
 
   @Post('register')
   async register(@Req() req, @Body() body: UserDTO, @Res() res): Promise<any> {
     const register = await this.authService.register(body);
-    res.json(register);
+    if (!register) {
+      res.json({
+        status: false,
+        message: register,
+        data: null,
+      });
+    } else {
+      res.json({
+        status: true,
+        message: 'Success',
+        data: register,
+      });
+    }
   }
 }
