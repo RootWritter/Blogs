@@ -1,11 +1,21 @@
 <template>
-  <h1>Login</h1>
+  <h1>Register</h1>
 
   <div class="row mt-3">
     <div class="col-md-8 m-auto">
       <div class="card">
-        <h5 class="card-header">Login Now</h5>
+        <h5 class="card-header">Register Now</h5>
         <div class="card-body">
+          <div class="form-group mb-3">
+            <label>Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              v-model="data.name"
+              placeholder="Enter your name"
+            />
+          </div>
           <div class="form-group mb-3">
             <label>Email Address</label>
             <input
@@ -30,7 +40,7 @@
         <div class="card-footer">
           <button type="reset" class="btn btn-danger mr-1">Reset</button>
           <button type="button" v-on:click="login" class="btn btn-primary">
-            Login
+            Register
           </button>
         </div>
       </div>
@@ -41,13 +51,14 @@
 import axios from "@/axios.config";
 import Swal from "sweetalert2";
 export default {
-  name: "LoginPages",
+  name: "RegisterPages",
   components: {},
   data() {
     return {
       data: {
         email: "",
         password: "",
+        name: "",
       },
     };
   },
@@ -55,7 +66,7 @@ export default {
     async login() {
       const data = this.data;
       axios
-        .post("auth/login", data)
+        .post("auth/register", data)
         .then(result => {
           if (result.data.status) {
             console.log(result.data.data);

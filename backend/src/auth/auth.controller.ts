@@ -16,7 +16,8 @@ export class AuthController {
     if (!login) {
       res.json({
         status: false,
-        message: login,
+        message: 'Invalid Request',
+        validation: login,
         data: null,
       });
     } else {

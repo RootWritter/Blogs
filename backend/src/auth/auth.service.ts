@@ -81,7 +81,7 @@ export class AuthService {
       user: {
         email: newUser.email,
         id: newUser.id,
-        name: user.name,
+        name: newUser.name,
       },
       access_token: token,
     };
